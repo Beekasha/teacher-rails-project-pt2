@@ -1,12 +1,14 @@
 <h1>Pages#home</h1>
 
 <% if current_teacher %>
+    <%= link_to 'Comments', comments_path %>
+    <br>
     <%= link_to 'Sign out', destroy_teacher_session_path, method: :delete %>
+
 <% else %>
     <%= link_to 'Sign up', new_teacher_registration_path %>
 
     <%= link_to 'Sign in', new_teacher_session_path %>
 <% end %>
 
-<%= link_to 'Comments', comments_path %>
 
