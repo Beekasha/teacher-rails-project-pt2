@@ -73,4 +73,5 @@ class CommentsController < ApplicationController
     def comment_params
       params.require(:comment).permit(:content, :student_id, :teacher_id)
     end
+
 end
