@@ -12,8 +12,8 @@
 
 <p>
   <strong>Teacher:</strong>
-  <% teacher = Teacher.find_by(id: @comment.teacher_id )%>
-  <%= teacher.name %>
+  <% @teacher = Teacher.find_by(id: params[teacher_id]) %>
+  <%= @teacher.name %>
 </p>
 
 <%= link_to 'Edit', edit_comment_path(@comment) %> |

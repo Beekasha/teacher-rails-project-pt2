@@ -16,10 +16,12 @@ class CommentsController < ApplicationController
   # GET /comments/new
   def new
     @comment = Comment.new
+    @comment.teacher_id = current_teacher.id
   end
-
+  #need teacher_id and student_id in comments table
   # GET /comments/1/edit
   def edit
+
   end
 
   # POST /comments
