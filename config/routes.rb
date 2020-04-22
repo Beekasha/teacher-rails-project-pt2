@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :klasses
   resources :comments
   root to: 'pages#home'
   devise_for :teachers
