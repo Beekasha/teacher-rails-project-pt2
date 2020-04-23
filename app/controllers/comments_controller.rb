@@ -17,6 +17,11 @@ class CommentsController < ApplicationController
   def new
     @comment = Comment.new
     @comment.teacher_id = current_teacher.id
+    @student_names = []
+    Student.all.each do |s|
+      @student_names << s.name
+    end
+
   end
   #need teacher_id and student_id in comments table
   # GET /comments/1/edit
