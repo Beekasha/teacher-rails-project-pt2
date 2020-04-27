@@ -1,2 +1,9 @@
 <h3>All my Classes (has to be changed to only my classes)</h3>
 
+<ul>
+    <% @klasses.each do |klass| %>
+        <% if klass.teacher_id == current_teacher.id %>
+            <li> <%= klass.name %> </li>
+        <% end %>
+    <% end %>
+</ul>
