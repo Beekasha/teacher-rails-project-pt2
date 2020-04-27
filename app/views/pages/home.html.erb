@@ -4,6 +4,8 @@
     <%= link_to 'Comments', comments_path %>
     <br>
     <%= link_to 'Sign out', destroy_teacher_session_path, method: :delete %>
+    <br>
+    <%= link_to 'Students', students_path %>
 
 <% else %>
     <%= link_to 'Sign up', new_teacher_registration_path %>

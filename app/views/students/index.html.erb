@@ -1,0 +1,12 @@
+<h4>Showing all students (but needs to change to teachers if they share a class)</h4>
+
+<% if current_teacher %>
+    <% @students.each do |student| %>
+        <li> <%= student.name %> </li>
+    <% end %>
+
+<% else %>
+
+<% end %>
+<br>
+<%= link_to 'Go Home', root_path %>
