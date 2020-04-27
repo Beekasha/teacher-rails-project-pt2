@@ -1,6 +1,8 @@
 <h1>Pages#home</h1>
-
 <% if current_teacher %>
+    <h2> Welcome, <%= current_teacher.name %> </h2>
+
+
     <%= link_to 'Comments', comments_path %>
     <br>
     <%= link_to 'Students', students_path %>
