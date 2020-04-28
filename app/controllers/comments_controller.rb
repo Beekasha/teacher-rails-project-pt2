@@ -27,12 +27,11 @@ class CommentsController < ApplicationController
   # GET /comments/1/edit
   def edit
     @student_names = []
-
     Student.all.each do |s|
       @student_names << s.name
     end
 
-    
+
   end
 
   # POST /comments
