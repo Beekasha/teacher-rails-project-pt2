@@ -26,7 +26,13 @@ class CommentsController < ApplicationController
   #need teacher_id and student_id in comments table
   # GET /comments/1/edit
   def edit
+    @student_names = []
 
+    Student.all.each do |s|
+      @student_names << s.name
+    end
+
+    
   end
 
   # POST /comments
@@ -34,6 +40,8 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.teacher_id = current_teacher.id
+    student = Student.find_by(name: params[student_name] )
+    @comment.student_id = student.id
 
     respond_to do |format|
       if @comment.save
