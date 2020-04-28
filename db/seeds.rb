@@ -34,22 +34,31 @@ Teacher.all.each do |t|
   end
 end
 
-@student_counter = 1
-Klass.all.each do |k| #gives each klass 20 students
-  20.times do
-    klass_id = k.id
 
-    if @student_counter <= Student.all.count
-      student_id = @student_counter #uniq problem is here
-    else
-      @student_counter = 1 #stops student_id from going over student.count
-      student_id = @student_counter
-    end
 
-    KlassesStudent.create(klass_id: klass_id, student_id: student_id)
-    @student_counter += 1 #stops student redundancy in class
-  end
+
+# @student_counter = 1
+# Klass.all.each do |k| #gives each klass 20 students
+#   20.times do
+#     klass_id = k.id
+
+#     if @student_counter <= Student.all.count
+#       student_id = @student_counter #uniq problem is here
+#     else
+#       @student_counter = 1 #stops student_id from going over student.count
+#       student_id = @student_counter
+#     end
+
+#     KlassesStudent.create(klass_id: klass_id, student_id: student_id)
+#     @student_counter += 1 #stops student redundancy in class
+#   end
   
+# end
+
+Klass.all.each do |k|
+    20.times do
+        KlassesStudent.create(klass_id: k.id, student_id: rand(1..Student.all.count))
+    end
 end
 
 
