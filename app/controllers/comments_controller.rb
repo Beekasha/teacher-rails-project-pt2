@@ -39,7 +39,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.teacher_id = current_teacher.id
-    student = Student.find_by(name: params[student_name] )
+    student = Student.find_by(id: params["comment"]["student_id"] ) 
     @comment.student_id = student.id
 
     respond_to do |format|
