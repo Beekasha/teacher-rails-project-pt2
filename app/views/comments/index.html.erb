@@ -18,7 +18,7 @@
     <% @comments.each do |comment| %>
       <tr>
         <td><%= comment.content %></td>
-        <td><%= comment.student.name %></td>
+        <td><%= link_to comment.student.name, student_path(comment.student) %></td>
         <td><%= comment.teacher.name %></td>
         <% if comment.teacher_id == current_teacher.id %>
           <td><%= link_to 'Show', comment %></td>

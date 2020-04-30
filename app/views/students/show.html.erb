@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <h1> <%= @student.name %> </h1>
 
-<% @comments.sort.each do |comment| %> #need to change this
+<% @comments.sort.each do |comment| %> 
     <p>
     <strong>Content:</strong>
     <%= comment.content %>
@@ -18,5 +18,8 @@
     </p>
     <br>
 <% end %>
+
+<%= link_to 'Go Home', root_path %>
+
 
 

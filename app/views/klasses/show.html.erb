@@ -1,0 +1,9 @@
+<h1> <%= @klass.name %>'s Home Page </h1>
+<h3>Period: <%= @klass.period %> </h3>
+
+
+<% @students.each do |student| %>
+    <p>
+    <%= link_to student.name, student_path(student) %>
+    </p>
+<% end %>

@@ -3,4 +3,8 @@ class KlassesController < ApplicationController
         @klasses = Klass.all
     end
     
+    def show
+        @klass = Klass.find_by(id: params[:id])
+        @students = @klass.students.sort_by {|s| s.name }
+    end
 end

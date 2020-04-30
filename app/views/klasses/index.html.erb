@@ -3,7 +3,7 @@
 <ul>
     <% @klasses.each do |klass| %>
         <% if klass.teacher_id == current_teacher.id %>
-            <li> <%= klass.name %> </li>
+            <li> <%= link_to klass.name, klass_path(klass) %> </li>
         <% end %>
     <% end %>
 </ul>
