@@ -1,4 +1,6 @@
 class KlassesController < ApplicationController
+    before_action :authenticate_teacher! #decide which comments you want to have private
+
     def index #must switch to only klasses that they teach
         @klasses = Klass.all.sort_by {|k| k.name }
     end

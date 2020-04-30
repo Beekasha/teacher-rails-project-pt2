@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_teacher!, except: [:show, :index] #decide which comments you want to have private
+  before_action :authenticate_teacher! #decide which comments you want to have private
+
 
   # GET /comments
   # GET /comments.json
