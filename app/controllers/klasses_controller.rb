@@ -1,6 +1,6 @@
 class KlassesController < ApplicationController
     def index #must switch to only klasses that they teach
-        @klasses = Klass.all
+        @klasses = Klass.all.sort_by {|k| k.name }
     end
     
     def show
