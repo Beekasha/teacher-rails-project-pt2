@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<h1> <%= @student.name %> </h1>
+
+<% @comments.each do |comment| %>
+    <p>
+    <strong>Content:</strong>
+    <%= comment.content %>
+    </p>
+
+    <p>
+    <strong>Teacher:</strong>
+    <%= comment.teacher.name %>
+    </p>
+    <br>
+<% end %>
+
+
