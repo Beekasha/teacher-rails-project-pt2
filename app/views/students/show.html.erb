@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <h1> <%= @student.name %> </h1>
 
-<% @comments.each do |comment| %>
+<% @comments.sort.each do |comment| %> #need to change this
     <p>
     <strong>Content:</strong>
     <%= comment.content %>
@@ -10,6 +10,11 @@
     <p>
     <strong>Teacher:</strong>
     <%= comment.teacher.name %>
+    </p>
+
+    <p>
+    <strong>Date Created:</strong>
+    <%= comment.created_at.strftime("%A, %d %b %Y %l:%M %p") %>
     </p>
     <br>
 <% end %>
