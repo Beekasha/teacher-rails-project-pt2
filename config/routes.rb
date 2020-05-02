@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :klasses do
-    end
-  resources :students 
+ 
+  resources :klasses
+  resources :students do
+     resources :parents, only: [:index, :show, :new]
+  end
   resources :comments
   root to: 'pages#home'
   devise_for :teachers

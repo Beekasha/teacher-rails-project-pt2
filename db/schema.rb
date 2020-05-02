@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_22_023123) do
+ActiveRecord::Schema.define(version: 2020_05_02_165005) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 2020_04_22_023123) do
   create_table "klasses_students", force: :cascade do |t|
     t.integer "student_id"
     t.integer "klass_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "parents", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.integer "phone_number"
+    t.integer "student_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
