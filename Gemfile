@@ -27,8 +27,6 @@ gem 'devise'
 # Seeding the database
 gem 'faker'
 
-gem 'nested_scaffold'
-
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
