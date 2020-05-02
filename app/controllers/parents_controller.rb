@@ -19,11 +19,28 @@ class ParentsController < ApplicationController
     end
 
     def create
-        @student = Student.find_by(id: params[:student_id])
+        @parent = Parent.new(parent_params)
+        @parent.student_id = params[:student_id]
 
-        @parent = Parent.new
-        @parent.student_id = @student.id
-        redirect_to student_path(@student)
+        @student = Student.find_by(id: params[:student_id])
+        if @parent.save
+            render 'parents/index'
+        else
+            render :new
+        end
+        # redirect_to student_parent_path(@student)
+    end
+
+    def show
+
+        render 'parents/index'
+    end
+
+
+    private
+
+    def parent_params
+        params.require(:parent).permit(:name, :email, :student_id, :phone_number)
 
     end
 end

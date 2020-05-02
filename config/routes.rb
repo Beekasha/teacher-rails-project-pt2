@@ -2,7 +2,7 @@ Rails.application.routes.draw do
  
   resources :klasses
   resources :students do
-     resources :parents, only: [:index, :show, :new]
+     resources :parents
   end
   resources :comments
   root to: 'pages#home'

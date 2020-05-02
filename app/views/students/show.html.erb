@@ -22,8 +22,10 @@
 <br>
 <%= link_to 'Go Home', root_path %>
 <br>
-<% if @student.parent.nil? %>
-    <%= link_to 'Create Parent', new_student_parent_path(@student) %>
-<% end %>
+    <% if @student.parent.nil? %>
+        <%= link_to 'Create Parent', new_student_parent_path(@student) %>
+    <% else %>
+        <%= link_to "Parent Info", student_parents_path(@student) %>
+    <% end %>
 
 

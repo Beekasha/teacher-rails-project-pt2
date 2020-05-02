@@ -10,5 +10,8 @@ class StudentsController < ApplicationController
     def show
         @student = Student.find_by(id: params[:id])
         @comments = @student.comments.all
+        if @student.parent
+            @parent = @student.parent
+        end
     end
 end
