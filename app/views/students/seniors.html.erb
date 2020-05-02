@@ -1,0 +1,6 @@
+<h1>Senior Class (Grade 12)</h1>
+
+<% Student.seniors.each do |teen| %>
+    <%= link_to teen.name, student_path(teen) %>
+    <br>
+<% end %>

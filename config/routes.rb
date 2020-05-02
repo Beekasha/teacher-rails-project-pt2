@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   devise_for :teachers
 
-  get 'needs_parent', :to => 'students#need_parent'
+  get 'seniors', :to => 'students#seniors'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
