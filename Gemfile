@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 # User Authentication
 gem 'devise'
 
+gem 'dotenv'
+
 # Seeding the database
 gem 'faker'
 
