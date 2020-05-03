@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 
 gem 'dotenv'
+gem 'omniauth-facebook'
 
 # Seeding the database
 gem 'faker'
