@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
   resources :comments
   root to: 'pages#home'
-  devise_for :teachers
+  devise_for :teachers, controllers: { omniauth_callbacks: 'teachers/omniauth_callbacks' }
 
   get 'seniors', :to => 'students#seniors'
 

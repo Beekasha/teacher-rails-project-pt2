@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.7'
 # User Authentication
 gem 'devise'
 
-gem 'dotenv'
+gem 'dotenv-rails'
 gem 'omniauth-facebook'
 
 # Seeding the database
