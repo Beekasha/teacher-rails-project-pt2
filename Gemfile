@@ -23,7 +23,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 # User Authentication
 gem 'devise'
-
+gem 'omniauth-facebook'
+gem 'dotenv-rails'
 # Seeding the database
 gem 'faker'
 

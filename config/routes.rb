@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   devise_for :teachers
 
   get 'seniors', :to => 'students#seniors'
+  get '/auth/facebook/callback' => 'sessions#create'
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
