@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :student_name %>
-    <%= form.collection_select(:student_id, Student.all, :id, :name ) %>
+    <%= form.collection_select(:student_id, current_teacher.students, :id, :name ) %>
     <%# student = Student.find_by(name: comment.student.) %>
     <%#= form.hidden_field :student_id, value: student.id %> 
 
