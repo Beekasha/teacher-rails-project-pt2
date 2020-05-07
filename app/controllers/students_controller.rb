@@ -4,7 +4,8 @@ class StudentsController < ApplicationController
 
     def index
         #this needs to change to students that share classes with the teacher
-        @students = current_teacher.students.all.sort_by {|s| s.name }.uniq
+        binding.pry
+        @students = current_teacher.students.sort_by_name
         
     end
 

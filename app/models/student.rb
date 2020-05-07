@@ -10,4 +10,8 @@ class Student < ApplicationRecord
         where(:grade => 12)
     }
 
+    scope :sort_by_name, -> {
+        order(:name)
+    }
+
 end
