@@ -3,8 +3,7 @@ class StudentsController < ApplicationController
 
 
     def index
-        #this needs to change to students that share classes with the teacher
-        @students = current_teacher.students.sort_by_name #created scope in the class
+        @students = current_teacher.students.sort_by_name #created scope in the class (otherwise got multiple student instances when listing - multiple students can be in multiple classes)
         
     end
 
