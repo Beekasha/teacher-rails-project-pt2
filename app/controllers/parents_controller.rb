@@ -20,7 +20,7 @@ class ParentsController < ApplicationController
 
     def create
         @parent = Parent.new(parent_params)
-        @parent.student_id = params[:student_id]
+        @parent.student_id = params[:student_id] #setting student_id for parent, without it having to be in the form
 
         @student = Student.find_by(id: params[:student_id])
         if @parent.save

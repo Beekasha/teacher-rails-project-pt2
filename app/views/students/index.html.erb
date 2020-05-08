@@ -1,4 +1,4 @@
-<h4>Showing all students (but needs to change to teachers if they share a class)</h4>
+<h4>Showing all <%= current_teacher.name %>'s students </h4>
 
 <% if current_teacher %>
     <% @students.each do |student| %>
