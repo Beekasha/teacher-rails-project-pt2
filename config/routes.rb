@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
  
-  resources :klasses
-  resources :students do
+  resources :klasses, only: [:index, :show]
+
+  resources :students, only: [:index, :show] do
      resources :parents
   end
+  
   resources :comments
   root to: 'pages#home'
   devise_for :teachers, controllers: { omniauth_callbacks: 'teachers/omniauth_callbacks' }

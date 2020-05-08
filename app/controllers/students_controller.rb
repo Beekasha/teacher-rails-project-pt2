@@ -4,8 +4,7 @@ class StudentsController < ApplicationController
 
     def index
         #this needs to change to students that share classes with the teacher
-        binding.pry
-        @students = current_teacher.students.sort_by_name
+        @students = current_teacher.students.sort_by_name #created scope in the class
         
     end
 
