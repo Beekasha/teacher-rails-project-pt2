@@ -13,6 +13,17 @@ class ParentsController < ApplicationController
         end
     end
 
+    def edit
+        
+        @student = Student.find_by(id: params[:student_id]) 
+        @parent = @student.parent
+        
+        render 'new'
+       
+    end
+
+
+
     def new
         @parent = Parent.new
         @student = Student.find_by(id: params[:student_id])
@@ -35,6 +46,18 @@ class ParentsController < ApplicationController
 
         render 'parents/index'
     end
+
+    def update
+        @student = Student.find_by(id: params[:student_id])
+       @parent = Parent.find_by(id: params[:id])
+        if @parent.update(parent_params)
+            redirect_to student_parents_path(@student)
+        else
+            render 'form', parent: @parent
+        end
+
+    end
+   
 
 
     private

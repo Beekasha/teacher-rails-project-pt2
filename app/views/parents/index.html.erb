@@ -2,5 +2,7 @@
 <h3> <%= @parent.phone_number %> </h3>
 <h3> <%= @parent.email %> </h3>
 
+
+<p> <%= link_to 'Edit', edit_student_parent_path(@parent.student, @parent) %> </p>
 <p> <%= link_to @parent.student.name, student_path(@parent.student) %> </p>
 
