@@ -52,12 +52,12 @@ class CommentsController < ApplicationController
   # PATCH/PUT /comments/1.json
   def update
     respond_to do |format|
-      if @comment.update(comment_params)
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @comment }
+      if 
+          format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
+          format.json { render :show, status: :ok, location: @comment }
       else
-        format.html { render :edit }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+      format.html { render :edit }
+      format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
   end
