@@ -14,8 +14,23 @@ class Student < ApplicationRecord
         order(:name)
     }
 
-    def self.find_by_name(name)
-        Student.find_by(name: name)
+    # def self.search(search)
+    #     if search
+    #         student = Student.find_by(name: search)
+    #         if student
+    #     Student.find_by(name: search)
+    # end
+
+    def self.search(string)
+        if string
+            if string == ""
+                Student.all.sort_by_name
+            else
+                Student.where("name like ?", "%#{string}%")
+            end
+        else
+            current_teacher.students.sort_by_name
+        end
     end
 
 end

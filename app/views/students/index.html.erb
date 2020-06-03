@@ -1,11 +1,16 @@
 <h4>Showing all <%= current_teacher.name %>'s students </h4>
 <%= link_to 'Need a list of Seniors only?', '/seniors' %>
 
-<%= form_with(url: students_path, method: "get") do %>
-  <%= label_tag(:student_name, "Search for Student Name:") %>
-  <%= text_field_tag(:student_name) %>
-  <%= submit_tag("Search") %>
-<% end %>
+<%#= form_with(url: students_path, method: "get") do %>
+  <%#= label_tag(:student_name, "Search for Student Name:") %>
+  <%#= text_field_tag(:student_name) %>
+  <%#= submit_tag("Search") %>
+<%# end %>
+ <h5>Search by Name</h5>
+ <%= form_tag students_path, :method => 'get'  do %>
+   <%= text_field_tag :student_search, params[:student_search]%>
+   <%= submit_tag "Search", :name => nil  %>
+ <% end %>
 
 <br>
 <br>
