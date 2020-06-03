@@ -32,8 +32,7 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(comment_params)
-    @comment.teacher_id = current_teacher.id
+    @comment = current_teacher.comments.new(comment_params)
     student = Student.find_by(id: params["comment"]["student_id"] ) 
     @comment.student_id = student.id
 

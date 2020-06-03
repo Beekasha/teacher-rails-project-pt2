@@ -4,7 +4,13 @@ class StudentsController < ApplicationController
 
     def index
         @students = current_teacher.students.sort_by_name #created scope in the class (otherwise got multiple student instances when listing - multiple students can be in multiple classes)
-        
+
+        # if params[:student_name]
+        #     @students = Student.find_by(name: params[:student_name])
+        # else
+        #     @students = current_teacher.students.sort_by_name
+        #     render 'index'
+        # end
     end
 
     def show
@@ -14,4 +20,5 @@ class StudentsController < ApplicationController
             @parent = @student.parent
         end
     end
+
 end

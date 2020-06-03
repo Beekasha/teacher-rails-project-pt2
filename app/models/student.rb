@@ -14,4 +14,8 @@ class Student < ApplicationRecord
         order(:name)
     }
 
+    def self.find_by_name(name)
+        Student.find_by(name: name)
+    end
+
 end

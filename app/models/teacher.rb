@@ -6,6 +6,8 @@ class Teacher < ApplicationRecord
   has_many :students, -> {distinct}, through: :klasses
   has_many :parents, through: :students
 
+  validates :name, presence: true
+
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
