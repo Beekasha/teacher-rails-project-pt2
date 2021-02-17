@@ -16,11 +16,14 @@
 
 
   <tbody>
-    <% @comments.each do |comment| %>
+    <%# reversing them makes the newest comments appear at the top of the page %>
+    <% @comments.reverse().each do |comment| %>
       <tr>
         <td><%= comment.content %></td>
         <td><%= link_to comment.student.name, student_path(comment.student) %></td>
-        <td><%= comment.teacher.name %></td>
+
+        <%# Changing the teacher name to firstInital. lastName %>
+        <td><%= comment.teacher.name.slice(0) + ". "+ comment.teacher.name.split(" ")[1] %></td>
         <% if comment.teacher_id == current_teacher.id %>
           <td><%= link_to 'Show', comment %></td>
           <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
