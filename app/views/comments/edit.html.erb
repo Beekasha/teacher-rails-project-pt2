@@ -1,6 +1,16 @@
 <h1>Editing Comment</h1>
 
-<%= render 'form-edit', comment: @comment %>
+<h3> <%= @comment.teacher_id %> </h3>
+
+
+<% if current_teacher.id == @comment.teacher_id %>
+    <%= render 'form-edit', comment: @comment %>
+
+    <% else %>
+    <h3>You cannot edit another teacher's comment.</h3>
+
+<% end %>
+
 
 <%= link_to 'Show', @comment %> 
 <%= link_to 'Back', comments_path %>
