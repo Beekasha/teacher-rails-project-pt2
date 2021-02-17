@@ -16,6 +16,7 @@
     <%= form.text_area :content %>
   </div>
 
+
   <div class="field">
     <%= form.label :student_name %>
     <%= form.collection_select(:student_id, Student.all, :id, :name ) %>
@@ -23,7 +24,7 @@
     <%#= form.hidden_field :student_id, value: student.id %> 
 
   </div>
-
+  <br>
 
   <div class="actions">
     <%= form.submit %>
