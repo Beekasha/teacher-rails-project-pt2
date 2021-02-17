@@ -8,8 +8,9 @@
 
 
 5.times do #creating 5 teachers
-    fake_name = Faker::Name.name
-    fake_email = Faker::Internet.email
+    fake_name = Faker::Name.first_name + " " + Faker::Name.last_name
+    # Making the teacher first name match the email address
+    fake_email = Faker::Internet.free_email(name: fake_name.split(" ")[0])
     fake_password = "password"
     Teacher.create(name: fake_name, email: fake_email, password: fake_password, password_confirmation: fake_password)
 end
